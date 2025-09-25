@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schelde Mapathon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        a:link {
+            color: white;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            display: inline-block;
+        }
+        
+        nav a:hover {
+            background-color: #2c3e50;
+            border-radius: 4px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background-color: #ecf0f1;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        
+        .hero h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+            text-align: justify;
+        }
+        
+        .content-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        
+        .image-text {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            gap: 2rem;
+        }
+        
+        .image-text img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .image-text-reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .url-formatting {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: smaller;
+            background-color: #f8f9fa;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            background-color: #3498db;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .image-text,
+            .image-text-reverse {
+                flex-direction: column;
+            }
+            
+            .image-text img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Schelde Mapathon</h1>
+        <p>Handleiding</p>
+    </header>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#Georefereren">Georefereren?</a>
+        <a href="#Allmaps">Allmaps</a>
+        <a href="#volunteer">Hierna</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <div class="container">
+        <div class="hero" id="home">
+            <h1>Welkom op de allereerste Schelde Mapathon!</h1>
+            <p>In deze handleiding vind je alle nodige informatie om de plannen van het Primitief Kadaster te georefereren.</p>
+        </div>
+        
+        <section class="content-section" id="Georefereren">
+            <h2>Georefereren?</h2>
+            <p>In het kader van het Artemis project willen onderzoekers van de Universiteit Gent en de Universiteit Antwerpen de vroegste plannen van het Kadaster beter bruikbaar maken. 
+                Dit kan onder meer door met de plannen hedendaagse geografische coördinaten te verbinden (=georefereren). Dit laat namelijk toe om de gedigitaliseerde plannen op de correcte 
+                positie over een hedendaagse en/of andere 'gegeorefereerde' kaart te leggen. Georefereren vraagt evenwel tijd en kennis van het landschap.<br><br>Deze mapathon staat dus in het teken 
+                van het zoeken naar overeenkomende punten tussen de vroegste kadasterplannen en het huidige landschap. Dat doen we via de Allmaps Editor.<br><br>
+            </p>
+            
+            <div>
+                <img src="https://iiif.ghentcdh.ugent.be/iiif/images/primitief_kadaster:550_0001_000_06788_000:550_0001_000_06788_000_0_0001/full/full/0/default.jpg" style="width:100%;" alt="Wichelen - Sectie A">
+            </div>
+        </section>
+        
+        <section class="content-section" id="Allmaps">
+            <h2>Allmaps gebruiken</h2>
+            <p><a href="https://allmaps.org/" style="color:#2c3e50;">Allmaps</a> voorziet digitale instrumenten om gedigitaliseerde (historische) kaarten eenvoudig te georefereren, te presenteren en te ontdekken. 
+            De belangrijkste applicaties zijn de <a href="https://editor.allmaps.org/" style="color:#2c3e50;">Allmaps Editor</a> en de <a href="https://viewer.allmaps.org/" style="color:#2c3e50;">Allmaps Viewer</a>. </p>
+            <div class="cards">
+                <div class="card">
+                    <img src="Allmaps-Editor.png" alt="Allmaps Editor">
+                    <p>Allmaps Editor stelt een online omgeving ter beschikking waarin specifieke kaarten geopend kunnen worden. Deze kaarten worden naast een hedendaagse kaart gepresenteerd, 
+                        zodat je als gebruiker op zoek kunt gaan naar overeenkomende punten.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="Allmaps-Viewer.png" alt="Allmaps Viewer">
+                    <p>Allmaps Viewer gebruikt het resultaat van de Allmaps Editor om (historische) kaarten over een hedendaagse kaart te presenteren. De applicatie biedt ook mogelijkheden
+                        (bv. wegnemen van de achtergrondkleur) om analyse te vergemakkelijken.
+                    </p>
+                </div>
+            </div>
+            <h3><br>Een kaart openen in Allmaps Editor</h3>
+            <ol style="margin: 1rem 0 1rem 2rem;">
+                <li>Open het overzicht van plannen via deze link. Kies (een deel van) een gemeente waar je wil aan werken en <b>plaats jouw naam in de kolom 'Uitgevoerd door'</b>.</li>
+                <li>Klik nu op de link in de kolom 'georeferentie'. Deze brengt jou naar de Allmaps Editor. De kaarten van de gekozen gemeente openen automatisch.</li>
+            </ol>
+            <div>
+                <img src="Allmaps-startpagina.png" alt="Allmaps editor startpagina">
+            </div>
+            <div>
+            <h3><br>Een masker tekenen</h3>
+            <p>Klik je op een kaart en verschijnt er geen geel icoon in de rechter onderhoek? Dan betekent dit dat er nog geen masker werd getekend. Dit masker is nodig om 
+                enkel de kaart zelf, en niet de randen te presenteren. Zo kunnen alle plannen makkelijk aan elkaar worden geplakt.<br><br><i>Verschijnt dit icoon wel? Dan kan je meteen door naar de volgende stap.</i>
+            </p>
+            <ol style="margin: 1rem 0 1rem 2rem;">
+                <li>Dubbelklik op een kaart, of selecteer een kaart en klik bovenaan op 'Draw mask'.</li>
+                <li>Teken een figuur die enkel de kaart zelf bevat. Je zet dus punten langs de rand (die vaak met een kleur is aangeduid) tot je een gesloten figuur bekomt.</li>
+                <li>Als je een fout maakt, teken dan gewoon verder. Nadat je de figuur hebt gesloten, kan je de punten nog aanpassen.</li>
+            </ol>
+            <p>Het resultaat ziet er als volgt uit.</p>
+            <img src="Allmaps-masker.png" alt="Allmaps Masker">
+            </div>
+            <div>
+            <h3><br>Een kaart georefereren</h3>
+            <ol style="margin: 1rem 0 1rem 2rem;">
+                <li>Klik bovenaan op 'Georeference'. De historische kaart verschijnt naast een hedendaagse kaart.</li>
+                <li>Zoom op de hedendaagse kaart naar de regio die op de historische kaart staat afgebeeld. Ga op zoek naar
+                    punten die overeenkomen (bv. ongewijzigde perceelsgrenzen, kruispunten, een herkenbaar gebouw, ...).
+                </li>
+                <li>Klik achtereenvolgens op het punt op de historische kaart en op het overeenkomende punt op de hedendaagse kaart.
+                    Er verschijnt een punt met hetzelfde nummer.
+                </li>
+                <li>Herhaal dit voor verschillende delen van de kaart. Zorg dat je minstens een zestal mooi verspreide punten aanduidt.</li>
+            </ol>
+            <p>Handig om the weten:</p>
+            </div>
+             <h4 style="padding-left: 20px;">Toegevoegde punten verwijderen</h4>
+             <ol style="padding-left: 60px;">
+                <li>Klik onderaan rechts op het lijsticoon (tweede van links).<img src="Allmaps-lijst.png" alt="Allmaps lijst" width="16"></li>
+                <li>Je krijgt een overzicht van alle toegevoegde punten. Ga op zoek naar het juiste cijfer en druk op het vuilbakje ernaast. Bevestig daarna dat je dit punt wil verwijderen.</li>
+                <li>Druk <b>niet</b> op het vuilbakje rechts bovenaan. Hiermee verwijder je het volledig masker en bijgevolg alle punten die ermee verbonden zijn.</li>
+            </ol>
+            <h4 style="padding-left: 20px;"><br>De referentiekaart wijzigen</h4>
+             <ol style="padding-left: 60px;">
+                <li>Klik onderaan rechts op het tandwiel (meest rechtse icoon).<img src="Allmaps-tandwiel.png" alt="Allmaps tandwiel" width="16"></li>
+                <li>Kopieer een van de volgende links:
+                    <ul style="PADDING-LEFT: 30px">
+                        <li><b>Grootschalig referentiebestand</b>: <div class="url-formatting">https://geo.api.vlaanderen.be/GRB/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=grb_bsk&STYLE=&FORMAT=image/png&TILEMATRIXSET=GoogleMapsVL&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}</div></li>
+                        <li><b>Ferraris kaart</b>: <div class="url-formatting">https://geo.api.vlaanderen.be/HISTCART/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=ferraris&STYLE=&FORMAT=image/png&TILEMATRIXSET=GoogleMapsVL&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}</div></li>
+                    </ul>
+                </li>
+                <li>Plak deze link bij 'Custom XYZ layer' en druk op 'Load'.</li>
+                <li>De referentiekaart wijzigt. Het kan zijn dat je moet inzoomen om de juiste regio te zien.</li>
+            </ol>
+            <h4 style="padding-left: 20px;"><br>De historische kaart draaien</h4>
+             <ol style="padding-left: 60px;">
+                <li>Op Windows: houd de 'alt' en de 'shift' toets ingedrukt en versleep de linker kaart.</li>
+                <li>Op Mac: houd de 'option' en de 'shift' toets ingedrukt en versleep de linker kaart</li>
+            </ol>
+            <div>
+                <h3><br>Het resultaat bekijken</h3>
+                <p>Je kan het resultaat van jouw toegevoegde punten op twee manieren bekijken: via de knop 'Results' rechts bovenaan en via de Allmaps Viewer. </p>
+                <h4 style="padding-left: 20px;"><br>Results</h4>
+             <ol style="padding-left: 60px;">
+                <li>'Results' toont de historische kaart boven een hedendaagse kaart. Je kan hier niets aanpassen.</li>
+                <li>Controleer of jouw kaart vreemde vervormingen vertoont. Dit kan wijzen op een fout in de toegevoegde punten. Bij een fout keer je terug naar de georeferentie en 
+                    ga je op zoek welk punt voor de vervorming zorgt.
+                </li>
+            </ol>
+            <h4 style="padding-left: 20px;"><br>Allmaps Viewer</h4>
+             <ol style="padding-left: 60px;">
+                <li>Druk onderaan op het deel-icoon (tweede van rechts).<img src="Allmaps-delen.png" alt="deel-icoon" width="16"></li>
+                <li>Kies 'Current image' (de geselecteerde kaart) of 'All images' (alle kaarten van de gemeente) en klik op het springplank-icoon naast 'View in Allmaps Viewer'.<img src="Allmaps-springplank.png" alt="springplank" width="16">
+                </li>
+                <li>De uitgesneden kaart(en) opent/openen in Allmaps Viewer. Hier kan je wel analyses uitvoeren. Dat kan via enkele sneltoetsen:
+                    <ul style="padding-left: 65px;">
+                        <li>'Spatie'-toets: kaart doorzichtig maken</li>
+                        <li>'M'-toets: masker weergeven</li>
+                        <li>'T'-toets: transformatie wijzigen</li>
+                        <li>'D'-toets: vervormingen (distorties) weergeven</li>
+                        <li>Rechtermuisklik: volgorde van de kaarten aanpassen (bv. kaart naar voor halen)</li>
+                    </ul>
+                </li>
+            </ol>
+            </div>
+        </section>
+        
+        <section class="content-section" id="volunteer">
+            <h2>En hierna?</h2>
+            <p>Heb je de smaak te pakken? Bezorg ons dan zeker jouw contactgegevens. Dan houden we jou op de hoogte over toekomstige evenementen en/of bekijken
+                we samen hoe je verder kan bijdragen aan de ontsluiting en bruikbaarheid van historische kaartencollecties.
+            </p>
+        </section>
+        
+        <div class="contact-info" id="contact">
+            <h2>Contacteer ons</h2>
+            <p><a href="mailto:vincent.ducatteeuw@ugent.be">Vincent Ducatteeuw (projectcoördinator)</a></p>
+            <p><a href="mailto:rein.debrulle@ugent.be">Rein Debrulle (data en kaartcollecties)</a></p>
+            <p><a href="mailto:fien.danniau@ugent.be">Fien Danniau (publiekswerking)</a></p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Project Artemis - Universiteit Gent / Universiteit Antwerpen</p>
+        <p>Volg ons via <a href="https://scheldegemapt.be">https://scheldegemapt.be</a></p>
+    </footer>
+</body>
+</html>
